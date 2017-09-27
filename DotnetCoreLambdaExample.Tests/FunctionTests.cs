@@ -9,7 +9,7 @@ namespace DotnetCoreLambdaExample.Tests
     public class FunctionTests
     {
         [Fact]
-        public async Task Handle_Returns_Message_From_Example_Service()
+        public async Task Handler_Returns_Message_From_Example_Service()
         {
             var testMessage = "Hello, world!  Testing...";
 
