@@ -3,9 +3,9 @@ A simple AWS Lambda function written in C#, with a unit test project.  This was 
 
 Here are the most important patterns demonstrated here:
 1. Using the default constructor of the Function class to bootstrap any services the function depends on.  I like to do things this way because it lets me use an overloaded constructor to inject mocks in unit tests.
+    - Normally, this sort of "poor man's DI" isn't a good idea, but it's the best place to bootstrap our function's dependencies since Lambda doesn't provide any other initialization hooks.
     - The constructor will be called once when a new instance of your Lambda is created.  Lambda instances will be reused for multiple invocations, so your Function class won't be constructed on every invocation.
     - You could, alternatively, lazy-initialize your function's dependencies, but I think that building up your object graph in the constructor is cleaner, easier to reason about, and less prone to errors.
-    - Normally, this sort of "poor man's DI" isn't a good idea, but it's the best place to bootstrap our function's dependencies since Lambda doesn't provide any other initialization hooks.
     - You don't need a big, heavy IoC framework to develop in C#.  In a Lambda function especially it's easier to just build your object graph yourself.
 2. Using the .NET Core configuration API (Microsoft.Extensions.Configuration) to read from both a local config file and Lambda environment variables to build the function's configuration object.
     - In general you should prefer environment variables since they give you more options for configuring your function (since you can set them through the CLI, or from a CloudFormation template, etc).
