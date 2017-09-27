@@ -6,7 +6,7 @@ Here are the most important patterns demonstrated here:
     - You could, alternatively, lazy-initialize your function's dependencies, but I think that building up your object graph in the constructor is cleaner, easier to reason about, and less prone to errors.
 2. Using the .NET Core configuration API (Microsoft.Extensions.Configuration) to read from both a local config file and Lambda environment variables to build the function's configuration object.
     - In general you should prefer environment variables since they give you more options for configuring your function (since you can set them through the CLI, or from a CloudFormation template, etc).
-    - Use a config file for large configuration values that would exceed the AWS Lambda limit of 4kb total for all environment variables
+    - Use a config file for large configuration values that would exceed the AWS Lambda limit of 4kb total for all environment variables.
     - It's fine to use both a configuration file (or some other configuration source, e.g. S3) and environment variables in the same Lambda.
 
 ## Setup
