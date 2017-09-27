@@ -12,6 +12,9 @@ namespace DotnetCoreLambdaExample
         // Use this ctor to bootstrap the Lambda's dependencies and fetch any configuration it needs.
         // If you have a service that can't (or shouldn't) be created/configured in one line of code, create a static
         // bootstrapper method like the one for ExampleService below.
+        // Normally, it's a bad idea to do poor man's DI like this.  But since the default ctor is called before
+        // your Handler is invoked for the first time and Lambda doesn't provide any other initialization hooks,
+        // this is the best place to bootstrap any services your function depends on.
         public Function()
             : this (ExampleServiceBootstrapper.CreateInstance(),
                 LambdaConfiguration.Instance["AnotherMessage"]) {}
