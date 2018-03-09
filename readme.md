@@ -1,4 +1,4 @@
-# DotnetCoreLambdaExample
+# dotnet-core-aws-lambda-example
 A simple AWS Lambda function written in C#, with a unit test project.  This was written to demonstrate some patterns that I've found to be useful in C# Lambda functions and to serve as a starting point for developers who are new to developing C# Lambda functions and want to know how to solve problems like bootstrapping, dependency injection, and configuration in a serverless C# application.
 
 Here are the most important patterns demonstrated here:
