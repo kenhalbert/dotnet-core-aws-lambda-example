@@ -7,7 +7,7 @@ Here are the most important patterns demonstrated here:
 
 ## Setup
 ### Prerequisites
-Make sure you've installed a version of the .NET Core SDK that supports `netstandard1.4` (for the Lambda function project) and `netcoreapp1.1` (for the unit test project).
+Make sure you've installed a version of the .NET Core SDK that supports `netstandard2.1` for the Lambda function project and the unit test project).
 
 ### Building and deploying the Lambda function
 1. Navigate to the directory the Lambda function's .csproj file is in (./DotnetCoreLambdaExample) and run `dotnet restore`
